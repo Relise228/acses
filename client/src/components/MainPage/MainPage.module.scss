@@ -1,0 +1,39 @@
+@import '../../sass//variables.scss';
+
+.mainPage {
+  &Wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &Buttons {
+  }
+  &Button {
+    padding: 10px 0;
+    width: 200px;
+    font-size: 24px;
+    background-color: transparent;
+    margin-right: 20px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 50px;
+    outline: none;
+    cursor: pointer;
+  }
+  &ButtonActive {
+    background-color: $color-blue;
+    color: white;
+  }
+  &ButtonClosed {
+    background-color: $color-purple;
+    color: White;
+  }
+}
+
+.mainPageTodoWrapper {
+  width: 100%;
+  height: 300px;
+}
