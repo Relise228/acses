@@ -111,7 +111,11 @@ router.delete('/delete', async (req, res) => {
 
     for (key in todos) {
       if (todos[key].createdDate === createdDate) {
-        user = {...user, deletedTodo: user.deletedTodo + 1};
+        user = {
+          ...user,
+          deletedTodo: user.deletedTodo + 1,
+          activeTodo: user.activeTodo - 1,
+        };
         delete todos[key];
       }
     }
