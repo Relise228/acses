@@ -33,7 +33,6 @@ function TodoPage({currentTodo, closeTodo, deleteTodo, history, updateTodo}) {
       currentTodo.inProgress
     );
     setShowModal(false);
-    console.log(deadline);
   };
 
   return (

@@ -19,9 +19,16 @@ router.post('/update', async (req, res) => {
   try {
     let user = JSON.parse(fs.readFileSync(file));
 
-    const {firstName, lastName, icon} = req.body;
+    const {firstName, lastName, icon, login, password} = req.body;
 
-    user = {...user, firstName: firstName, lastName: lastName, icon: icon};
+    user = {
+      ...user,
+      firstName: firstName,
+      lastName: lastName,
+      icon: icon,
+      login: login,
+      password: password,
+    };
 
     fs.writeFileSync(file, JSON.stringify(user));
 

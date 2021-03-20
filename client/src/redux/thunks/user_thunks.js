@@ -8,8 +8,23 @@ export const userThunks = {
       dispatch(actionsUser.setError(data.error));
     } else {
       await dispatch(actionsUser.setAuthorized(data.verify));
+      sessionStorage.setItem('authorized', true);
     }
-    console.log(data);
-    //dispatch(todosActions.setAllTodos(data));
+  },
+  getUser: () => async (dispatch) => {
+    let data = await userAPI.getUser();
+    dispatch(actionsUser.setUserData(data));
+  },
+  updateUser: (login, password, firstName, lastName, icon) => async (
+    dispatch
+  ) => {
+    let data = await userAPI.updateUser(
+      login,
+      password,
+      firstName,
+      lastName,
+      icon
+    );
+    dispatch(actionsUser.setUserData(data));
   },
 };

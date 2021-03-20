@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import {todosThunks} from '../../redux/thunks/todos_thunks';
 import AddForm from '../AddForm/AddForm';
 
@@ -16,8 +17,12 @@ function Header({authorized, addTodo}) {
 
   return (
     <div className={s.header}>
-      <div>TODO APP</div>
-      {authorized && (
+      <div>
+        <Link to={'/'} className={s.headerToDo}>
+          TODO APP
+        </Link>
+      </div>
+      {(sessionStorage.getItem('authorized') || authorized) && (
         <div className={s.headerInfoWrapp}>
           <div>
             <button
@@ -27,7 +32,9 @@ function Header({authorized, addTodo}) {
               Add Todo
             </button>
           </div>
-          <div>Account</div>
+          <Link to={'/user'} className={s.headerUser}>
+            User
+          </Link>
         </div>
       )}
       {modal && <AddForm onSubmit={onSubmit} onClose={() => setModal(false)} />}

@@ -35,4 +35,9 @@ export const userAPI = {
     instance
       .post('user/login', {login, password})
       .then((response) => response.data),
+  getUser: () => instance.get('user/').then((response) => response.data),
+  updateUser: (login, password, firstName, lastName, icon) =>
+    instance
+      .post('user/update', {login, password, firstName, lastName, icon})
+      .then((response) => response.data),
 };

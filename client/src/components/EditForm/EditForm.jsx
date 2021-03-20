@@ -9,8 +9,8 @@ let validate = (values) => {
   if (!values.title) {
     errors.title = 'Required';
   }
-  if (!values.password) {
-    errors.password = 'Required';
+  if (!values.deadline) {
+    errors.deadline = 'Required';
   }
   return errors;
 };
@@ -33,10 +33,8 @@ function EditForm(props) {
     if (date[1] < 10) {
       date[1] = '0' + date[1];
     }
-
     return date.join('-');
   };
-  console.log(dateFormat(deadline));
 
   useEffect(() => {
     props.initialize({
@@ -83,7 +81,11 @@ function EditForm(props) {
       </div>
       <div>
         <div>
-          <button className={s.saveButton} onSubmit={handleSubmit}>
+          <button
+            className={s.saveButton}
+            disabled={submitting}
+            onSubmit={handleSubmit}
+          >
             Save
           </button>
         </div>

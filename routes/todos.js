@@ -107,7 +107,6 @@ router.delete('/delete', async (req, res) => {
   try {
     let todos = JSON.parse(fs.readFileSync(file));
     let user = JSON.parse(fs.readFileSync(fileUser));
-    console.log(req.body);
     const {createdDate} = req.body;
 
     for (key in todos) {

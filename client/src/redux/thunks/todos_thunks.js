@@ -4,17 +4,14 @@ import {todosActions} from '../actions/todos_actions';
 export const todosThunks = {
   getAllTodos: () => async (dispatch) => {
     let data = await todosAPI.getAllTodos();
-    console.log(data);
     dispatch(todosActions.setAllTodos(data));
   },
   closeTodo: (date) => async (dispatch) => {
     let data = await todosAPI.closeTodo(date);
-    console.log(data);
     dispatch(todosActions.setAllTodos(data));
   },
   deleteTodo: (date) => async (dispatch) => {
     let data = await todosAPI.deleteTodo(date);
-    console.log(data);
     dispatch(todosActions.setAllTodos(data));
   },
   updateTodo: (title, description, createdDate, deadline, inProgress) => async (
@@ -34,7 +31,6 @@ export const todosThunks = {
   },
   addTodo: (title, descriprion, deadline) => async (dispatch) => {
     let data = await todosAPI.addTodo(title, descriprion, deadline);
-    console.log(data);
     dispatch(todosActions.setAllTodos(data));
   },
 };

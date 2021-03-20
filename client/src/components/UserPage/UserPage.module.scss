@@ -1,0 +1,65 @@
+@import '../../sass//variables.scss';
+
+.userPage {
+  &Wrapper {
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &Left {
+    display: flex;
+    flex-direction: column;
+  }
+  &About {
+    display: flex;
+    &Wrapper {
+      margin-left: 40px;
+    }
+    &Login {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    &Name {
+      font-size: 30px;
+    }
+  }
+  &About > img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
+  &Stats {
+    margin-top: 20px;
+    &Top {
+      display: flex;
+      justify-content: center;
+    }
+    &Bottom {
+      display: flex;
+    }
+    &Data {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &ButtonWrapper {
+    width: 100%;
+    margin-top: 30px;
+  }
+  &Button {
+    width: 100%;
+    height: 50px;
+    background-color: $color-blue;
+    border: none;
+    font-size: 16px;
+    color: white;
+    letter-spacing: 0.05em;
+    outline: none;
+    cursor: pointer;
+  }
+}

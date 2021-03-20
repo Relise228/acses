@@ -3,7 +3,7 @@ import {actionsTypeUser} from '../actions/actions_type_user';
 
 let initialState = {
   user: {},
-  authorized: true,
+  authorized: false,
   error: '',
 };
 

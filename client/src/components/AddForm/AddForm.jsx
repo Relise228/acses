@@ -9,8 +9,8 @@ let validate = (values) => {
   if (!values.title) {
     errors.title = 'Required';
   }
-  if (!values.password) {
-    errors.password = 'Required';
+  if (!values.deadline) {
+    errors.deadline = 'Required';
   }
   return errors;
 };

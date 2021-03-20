@@ -6,8 +6,6 @@ function TodoBox({todo, active, onClickTodo, onClose, onDelete}) {
   const createdDate = parseDate(todo.createdDate);
   const deadlineDate = parseDate(todo.deadline);
 
-  console.log(todo.title);
-
   return (
     <div className={s.todoBox}>
       <div className={s.todoBoxTitle} onClick={() => onClickTodo(todo)}>

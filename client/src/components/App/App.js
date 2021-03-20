@@ -28,7 +28,7 @@ function App({authorized, loginFunc}) {
   return (
     <div className={s.app}>
       <Header />
-      {authorized ? (
+      {sessionStorage.getItem('authorized') || authorized ? (
         <Switch>
           <Route exact path='/' component={MainPage} />
           <Route exact path='/todo' component={TodoPage} />
