@@ -1,29 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Field, reduxForm} from 'redux-form';
+import {renderField} from '../../util/util';
 import s from './LoginForm.module.scss';
-
-const renderField = ({
-  otherError,
-  input,
-  label,
-  type,
-  meta: {touched, error},
-}) => {
-  const border =
-    otherError || (touched && error) ? {borderBottom: '1px solid red'} : {};
-  return (
-    <div>
-      <input
-        {...input}
-        placeholder={label}
-        type={type}
-        className={s.field}
-        style={border}
-      />
-    </div>
-  );
-};
 
 let validate = (values) => {
   const errors = {};

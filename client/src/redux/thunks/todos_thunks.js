@@ -17,4 +17,24 @@ export const todosThunks = {
     console.log(data);
     dispatch(todosActions.setAllTodos(data));
   },
+  updateTodo: (title, description, createdDate, deadline, inProgress) => async (
+    dispatch
+  ) => {
+    let data = await todosAPI.updateTodo(
+      title,
+      description,
+      createdDate,
+      deadline,
+      inProgress
+    );
+    dispatch(todosActions.setAllTodos(data));
+    data.map((t) => {
+      t.createdDate === createdDate && dispatch(todosActions.setCurrentTodo(t));
+    });
+  },
+  addTodo: (title, descriprion, deadline) => async (dispatch) => {
+    let data = await todosAPI.addTodo(title, descriprion, deadline);
+    console.log(data);
+    dispatch(todosActions.setAllTodos(data));
+  },
 };

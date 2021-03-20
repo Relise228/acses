@@ -1,9 +1,10 @@
 import React from 'react';
+import {parseDate} from '../../util/util';
 import s from './TodoBox.module.scss';
 
 function TodoBox({todo, active, onClickTodo, onClose, onDelete}) {
-  const createdDate = new Date(todo.createdDate).toLocaleDateString();
-  const deadlineDate = new Date(todo.deadline).toLocaleDateString();
+  const createdDate = parseDate(todo.createdDate);
+  const deadlineDate = parseDate(todo.deadline);
 
   console.log(todo.title);
 

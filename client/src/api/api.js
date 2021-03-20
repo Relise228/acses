@@ -14,6 +14,20 @@ export const todosAPI = {
     instance
       .delete('todos/delete', {data: {createdDate}})
       .then((response) => response.data),
+  updateTodo: (title, description, createdDate, deadline, inProgress) =>
+    instance
+      .post('todos/update', {
+        title,
+        description,
+        createdDate,
+        deadline,
+        inProgress,
+      })
+      .then((response) => response.data),
+  addTodo: (title, description, deadline) =>
+    instance
+      .put('todos/add', {title, description, deadline})
+      .then((response) => response.data),
 };
 
 export const userAPI = {

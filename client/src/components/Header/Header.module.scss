@@ -1,9 +1,28 @@
+@import '../../sass/variables.scss';
+
 .header {
   height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   font-size: 30px;
   font-weight: bold;
   box-shadow: -1px 15px 43px -7px rgba(0, 0, 0, 0.75);
+
+  &InfoWrapp {
+    display: flex;
+    align-items: center;
+  }
+  &AddButton {
+    width: 150px;
+    height: 30px;
+    background-color: $color-blue;
+    border: none;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    margin-right: 20px;
+    outline: none;
+    cursor: pointer;
+  }
 }
